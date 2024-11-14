@@ -1,0 +1,186 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: radial-gradient(circle, #0a0a0a, #000000);
+    color: #33ff33;
+    font-family: 'Roboto Mono', monospace;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    animation: backgroundShift 10s infinite alternate;
+}
+
+@keyframes backgroundShift {
+    0% {
+        background: radial-gradient(circle, #0a0a0a, #000000);
+    }
+    100% {
+        background: radial-gradient(circle, #0d0d0d, #111111);
+    }
+}
+
+.boot-menu-container {
+    width: 700px;
+    max-width: 90%;
+    border: 2px solid #33ff33;
+    padding: 30px;
+    background: linear-gradient(145deg, #0d0d0d, #111111);
+    border-radius: 25px;
+    box-shadow: 0 0 30px #33ff33, inset 0 0 30px #004d00;
+    text-align: center;
+    animation: fadeIn 1.5s ease-out, borderGlow 4s infinite alternate;
+    position: relative;
+    overflow: hidden;
+}
+
+@keyframes borderGlow {
+    0% {
+        box-shadow: 0 0 30px #33ff33, inset 0 0 30px #004d00;
+    }
+    100% {
+        box-shadow: 0 0 50px #66ff66, inset 0 0 50px #006600;
+    }
+}
+
+.boot-header h1 {
+    margin: 0;
+    font-size: 3.5rem;
+    color: #66ff66;
+    text-shadow: 0 0 20px #00cc00, 0 0 30px #009900;
+    animation: pulse 2.5s infinite alternate, textGlow 4s infinite alternate;
+    letter-spacing: 0.1rem;
+}
+
+@keyframes textGlow {
+    0% {
+        text-shadow: 0 0 20px #00cc00, 0 0 30px #009900;
+    }
+    100% {
+        text-shadow: 0 0 35px #66ff66, 0 0 40px #00ff00;
+    }
+}
+
+.boot-subtitle {
+    margin: 10px 0 30px 0;
+    color: #99ff99;
+    font-size: 1.5rem;
+    animation: subtitleFade 5s infinite alternate;
+    font-weight: 300;
+}
+
+@keyframes subtitleFade {
+    0% {
+        opacity: 0.8;
+        transform: translateY(0);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(-10px);
+    }
+}
+
+.boot-options {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    animation: optionsFade 1.5s ease-out forwards;
+}
+
+@keyframes optionsFade {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.option {
+    padding: 20px 30px;
+    width: 85%;
+    border: 2px solid #33ff33;
+    border-radius: 12px;
+    background: linear-gradient(90deg, #004400, #003300);
+    color: #33ff33;
+    cursor: pointer;
+    font-size: 1.6rem;
+    letter-spacing: 0.05rem;
+    transition: all 0.4s ease, box-shadow 0.4s ease;
+    animation: glowEffect 3s infinite alternate;
+    position: relative;
+}
+
+@keyframes glowEffect {
+    0% {
+        box-shadow: 0 0 15px #004d00;
+    }
+    100% {
+        box-shadow: 0 0 25px #66ff66;
+    }
+}
+
+.option:hover {
+    background: linear-gradient(90deg, #006600, #004d00);
+    border-color: #66ff66;
+    box-shadow: 0 0 30px #00cc00, 0 0 20px #00cc00 inset;
+    transform: scale(1.1);
+}
+
+.footer-text {
+    margin-top: 30px;
+    color: #009900;
+    font-size: 1rem;
+    animation: footerGlow 6s infinite alternate, slideIn 3s ease-in-out infinite;
+    font-weight: 400;
+}
+
+@keyframes footerGlow {
+    0% {
+        color: #009900;
+    }
+    100% {
+        color: #33ff33;
+    }
+}
+
+@keyframes slideIn {
+    0% {
+        transform: translateX(-15px);
+    }
+    100% {
+        transform: translateX(15px);
+    }
+}
+
+@media (max-width: 600px) {
+    .boot-header h1 {
+        font-size: 2.5rem;
+        letter-spacing: 0.05rem;
+    }
+
+    .option {
+        font-size: 1.2rem;
+        padding: 12px 22px;
+    }
+
+    .footer-text {
+        font-size: 0.85rem;
+    }
+
+    .boot-menu-container {
+        width: 90%;
+        padding: 25px;
+    }
+}
+/* Change cursor to + symbol */
+body, .boot-menu-container, .boot-header h1, .boot-subtitle, .boot-options, .option, .footer-text {
+    cursor: crosshair;
+}
+.option {
+    cursor: crosshair;
+}
